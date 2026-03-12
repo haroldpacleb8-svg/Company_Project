@@ -111,14 +111,19 @@
   .cart-count-bubble {
     background-color: #d4af37 !important;
     color: #1a1a1a !important;
-    bottom: 0.5rem !important;
-    left: 2.5rem !important;
+    bottom: 0.8rem !important; /* Adjusted for better balance */
+    left: 2.2rem !important;   /* Standard Dawn positioning */
+    z-index: 1;
   }
 
-  /* Localization Balancing */
+  /* Localization & Icon Balancing */
+  .header__icons {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
   .header__icons.header-localization {
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
   }
 
@@ -146,6 +151,17 @@
     background-color: #1a1a1a !important;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .header__icon, .header__icon .icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .header__icon--cart .icon {
+    height: 2rem !important;
+    width: 2rem !important;
   }
 </style>
 
