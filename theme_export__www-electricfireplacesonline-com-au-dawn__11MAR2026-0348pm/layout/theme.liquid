@@ -298,11 +298,57 @@
     </script>
   </head>
 <style>
-.card__content {
+  .card__content {
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-end !important;
-}
+  }
+
+  /* Modern Visual Enhancements */
+  :root {
+    --luxury-gold: #d4af37;
+    --luxury-gold-glow: rgba(212, 175, 55, 0.3);
+  }
+
+  .button, .shopify-payment-button__button {
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 600 !important;
+  }
+
+  .button:hover, .shopify-payment-button__button:hover {
+    box-shadow: 0 0 20px var(--luxury-gold-glow) !important;
+    transform: translateY(-1px);
+  }
+
+  .card {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .section-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Smooth scroll for modern feel */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background: var(--luxury-gold);
+    color: #1a1a1a;
+  }
 </style>
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
