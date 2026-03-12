@@ -297,63 +297,10 @@
       }
     </script>
 
-    <!-- SEO & Eyecandy Enhancements -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": {{ shop.name | json }},
-      "url": {{ request.origin | json }},
-      "logo": {{ settings.logo | image_url: width: 500 | json }},
-      "sameAs": [
-        {{ settings.social_facebook_link | json }},
-        {{ settings.social_instagram_link | json }},
-        {{ settings.social_tiktok_link | json }},
-        {{ settings.social_pinterest_link | json }}
-      ]
-    }
-    </script>
-
-    <style>
-      /* Heading Polish: Gold Gradients */
-      h1, h2, .h1, .h2 {
-        background: linear-gradient(135deg, #d4af37 0%, #f7e089 50%, #d4af37 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
-        display: inline-block;
-      }
-
-      /* Section Reveal Animation */
-      .shopify-section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        will-change: transform, opacity;
-      }
-
-      .shopify-section.scrolled-in {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
-
     <script>
-      // Simple, high-performance IntersectionObserver for section reveals
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('scrolled-in');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.shopify-section').forEach(section => {
-          revealObserver.observe(section);
-        });
-      });
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
     </script>
   </head>
 <style>
