@@ -114,6 +114,39 @@
     bottom: 0.5rem !important;
     left: 2.5rem !important;
   }
+
+  /* Localization Balancing */
+  .header__icons.header-localization {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .desktop-localization-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-localization .localization-form__select {
+    height: 4.4rem !important; /* Match standard icon height */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .header-localization .localization-form__select:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .header-localization .disclosure__list-wrapper {
+    background-color: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
 </style>
 
 {%- style -%}
